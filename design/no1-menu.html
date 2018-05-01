@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>no1-menu</title>
+	<style>
+		.body{
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		.menu{
+			display:inline-black;
+			margin: auto;
+			padding: 25px;
+			width: 180px;	
+			text-align: center;
+		}	
+			.menu-title{
+				
+				font-size: 30px;
+				color: #333;
+			transition: color 2s;
+		}	
+		.menu-title-on{
+			color: #0cf;
+		transition: color 2s;
+		}
+		.menu-bar{
+			display: inline-block;
+			justify-content: center;
+			width: 100%;
+			transition: width 2s;
+			height: 2px;
+			background: #0cf;
+		}
+		.menu-bar-on{
+		width:0px;
+		transition: width 2s;
+		text-align: center;
+		}
+
+		.menu-click{
+			width: 100px;
+			height: 40px;
+			margin-top: 20px;
+			border-radius:5px;
+			background: #fff;
+			border: 2px solid #ccc;
+		}
+		menu-click:focus{
+          outline: none;
+      }
+	.menu-click:active{
+			color :#fff;
+			background: #0cf;
+			border: none;
+			outline：none;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-title">百度前端学院</div>
+		<div class="menu-bar"></div><br/>
+			<button class="menu-click">
+		切换样式
+	</button>
+	</div>
+
+	<script type="text/javascript">
+		console.info(document.getElementsByClassName('menu-click'));
+		var click=document.getElementsByClassName('menu-click')[0];
+		var count = 0;
+		click.onclick=function (){
+			var title = document.getElementsByClassName('menu-title')[0];
+			var bar = document.getElementsByClassName('menu-bar')[0];
+			console.info(count);
+			if(count%2===0){
+				title.className=(title.className+' menu-title-on');
+			bar.className=(bar.className+' menu-bar-on');
+			}else{
+			title.className=(title.className.replace(' menu-title-on',''));
+			bar.className=(bar.className.replace(' menu-bar-on',''));
+			}
+			
+			count++;
+
+		};
+	</script>
+</body>
+</html>
